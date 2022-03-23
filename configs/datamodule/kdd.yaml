@@ -1,0 +1,7 @@
+_target_: src.datamodules.kdd_datamodule.KDDDataModule
+
+data_file: ${data_file} # data_file is specified in config.yaml
+batch_size: 1
+train_val_split: [0.8, 0.2]
+num_workers: 0
+pin_memory: False

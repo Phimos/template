@@ -3,8 +3,8 @@
 # specify here default training configuration
 defaults:
   - _self_
-  - datamodule: mnist.yaml
-  - model: mnist.yaml
+  - datamodule: kdd.yaml
+  - model: kdd.yaml
   - callbacks: default.yaml
   - logger: null # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
   - trainer: default.yaml
@@ -34,7 +34,7 @@ defaults:
 original_work_dir: ${hydra:runtime.cwd}
 
 # path to folder with data
-data_dir: ${original_work_dir}/data/
+data_file: ${original_work_dir}/data/initial_kddcup.csv
 
 # pretty print config at the start of the run using Rich library
 print_config: True
@@ -47,7 +47,7 @@ train: True
 
 # evaluate on test set, using best model weights achieved during training
 # lightning chooses best weights based on the metric specified in checkpoint callback
-test: True
+test: False
 
 # seed for random number generators in pytorch, numpy and python.random
 seed: null
